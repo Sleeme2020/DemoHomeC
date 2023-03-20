@@ -10,7 +10,6 @@ public:
 	MyString& operator=(const MyString& b);
 	MyString& operator=(MyString&& b);
 	bool operator==(const MyString& b);
-	MyString Add(const MyString& a, const MyString& b);
 	MyString(const MyString& tmp);
 	MyString(MyString&& tmp);
 	explicit MyString(const char* str);

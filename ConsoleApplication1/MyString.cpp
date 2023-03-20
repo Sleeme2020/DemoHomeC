@@ -5,7 +5,9 @@
 using namespace std;
 MyString::MyString()
 {
-
+    str = new char[1];
+    str[0] = '\0';
+    len = 0;
 }
 
 MyString& MyString::operator+(const MyString& b)
@@ -82,12 +84,8 @@ bool MyString::operator==(const MyString& b)
 
 }
 
-MyString MyString::Add(const MyString& a, const MyString& b)
-{
-	return MyString();
-}
 
-MyString::MyString(const MyString& tmp)
+MyString::MyString(const MyString& tmp):MyString(tmp.str)
 {
 }
 
@@ -139,11 +137,11 @@ void MyString::Print()
 
 MyString& operator+(const char* a, const MyString& b)
 {
-    int len = strlen(str);
+    int len = strlen(a);
     char* tmp = new char[len + b.len + 1];
     for (int i = 0; i < len; i++)
     {
-        tmp[i] = str[i];
+        tmp[i] = a[i];
     }
     for (int i = len; i < b.len + len; i++)
     {
@@ -152,5 +150,5 @@ MyString& operator+(const char* a, const MyString& b)
     tmp[len + b.len] = '\0';
     MyString st(tmp);
     delete[] tmp;
-    return st; / TODO: вставьте здесь оператор return
+    return st; 
 }

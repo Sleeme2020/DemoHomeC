@@ -11,11 +11,14 @@ class Kvartira
 	double squaremetr;
 	int komnat;
 	void getnum();
+	void clear();
+	void resize(int x);
 public:
 	Kvartira();
 	Kvartira(int komnat, double squaremetr);
 	Kvartira(int komnat, double squaremetr, Human& humans);
 	Kvartira(int komnat, double squaremetr, Human* humans, int count);
+	~Kvartira();
 	//ƒобавл€ю ползователей
 	Kvartira& operator+(const Human& human);
 	//—оеден€ю квартиры

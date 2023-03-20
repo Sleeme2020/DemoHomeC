@@ -5,6 +5,8 @@
 
 class Human
 {  
+        static int numerator;
+        int num;
         MyString name;
         MyString firstname;
         MyString lastname;
@@ -16,7 +18,11 @@ public:
         , Date& birthday);
 
     MyString& GetSetName();
-    
+    MyString& GetSetFirstName();
+    MyString& GetSetLastName();
+    Date& GetSetBirthday();
+    int GetNum();
+    bool operator==(const Human& hum);
     
     
 };
