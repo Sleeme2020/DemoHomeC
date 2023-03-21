@@ -103,6 +103,12 @@ MyString::MyString(const char* str)
     this->str[len] = '\0';
 }
 
+MyString::MyString(char* str)
+{
+    strcpy(this->str, str);
+    this->str[len] = '\0';
+}
+
 MyString::~MyString()
 {
     if (str != nullptr)

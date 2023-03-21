@@ -1,16 +1,17 @@
 #pragma once
 #include "Human.h"
-
-
+#include <cassert>
+#include "MyArray.h"
+#include "Numerator.h"
 class Kvartira
 {
-	Human* humans;
-	int count;
-	static int numerator;
+	/*Human* humans;
+	int count;*/
+	MyArray humans;
+	static Numerator numerator;
 	int num;
 	double squaremetr;
-	int komnat;
-	void getnum();
+	int komnat;	
 	void clear();
 	void resize(int x);
 public:
@@ -18,7 +19,7 @@ public:
 	Kvartira(int komnat, double squaremetr);
 	Kvartira(int komnat, double squaremetr, Human& humans);
 	Kvartira(int komnat, double squaremetr, Human* humans, int count);
-	~Kvartira();
+	
 	//ƒобавл€ю ползователей
 	Kvartira& operator+(const Human& human);
 	//—оеден€ю квартиры
@@ -36,6 +37,6 @@ public:
 	//—брасываем всех людей и присваеваем 1
 	Kvartira& operator=(const Human& human);
 	//индексатор коллекции
-	Human& operator[](int num);
+	Human& operator[](int num); 
 };
 

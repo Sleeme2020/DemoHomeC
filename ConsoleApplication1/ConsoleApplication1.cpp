@@ -3,86 +3,21 @@
 
 #include <iostream>
 #include <cassert>
-//class DynArr
-//{
-//    int* arr;
-//    int len;
-//
-//public:
-//    DynArr():DynArr(5)
-//    {
-//
-//    }
-//    DynArr(int a):arr{new int[a]},len{a}
-//    {
-//
-//    }
-//
-//    void Set(int i,int a)
-//    {
-//        assert(i >= 0 and i < len and "Index is out "
-//            "of range!");
-//        arr[i] = a;
-//
-//    }
-//
-//    int Get(int i)
-//    {
-//        assert(i >= 0 and i < len and "Index is out "
-//            "of range!");
-//        return arr[i];
-//    }
-//
-//    int& GetSet(int i)
-//    {
-//        assert(i >= 0 and i < len and "Index is out "
-//            "of range!");
-//        return arr[i];
-//    }
-//
-//    int& operator[](int i)
-//    {
-//        assert(i >= 0 and i < len and "Index is out "
-//            "of range!");
-//        return arr[i];
-//    }
-//    int operator()(int i, int first ...)
-//    {
-//        int* tmp = &first;
-//        tmp[i - 1];
-//        assert(i >= 0 and i < len and "Index is out "
-//            "of range!");
-//        
-//        return arr[i] ;
-//    }
-//
-//    explicit operator int* ()
-//    {
-//        int* tmp = new int[len];
-//        for (int i = 0; i < len; i++)
-//        {
-//            tmp[i] = arr[i];
-//        }
-//        return tmp;
-//    }
-//    operator int()
-//    {
-//        int sum = 0;
-//        for (int i = 0; i < len; i++)
-//        {
-//            sum+= arr[i];
-//        }
-//        return sum;
-//    }
-//};
+#include "MyString.h"
 
 #include "Human.h" 
-
+#include "Kvartira.h"
 
 
 
 int main()
-{
+{    
+   
+    Human Petya("Ivanov", "Petya", "Petrovich",Date());
+    Human Vas("Ivanov", "Vas", "Petrovich", Date());
+    Kvartira kv1(2, 45, Petya);
+    kv1 + Vas;
+
     
     std::cout << "Hello World!\n";
 }

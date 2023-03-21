@@ -12,7 +12,8 @@ public:
 	bool operator==(const MyString& b);
 	MyString(const MyString& tmp);
 	MyString(MyString&& tmp);
-	explicit MyString(const char* str);
+	MyString(const char* str);
+	MyString(char* str);
 	~MyString();
 	char* GetStr();
 	void SetStr(char* a);

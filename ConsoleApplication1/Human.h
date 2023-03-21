@@ -14,8 +14,11 @@ class Human
 
 public:
     Human();
+    
     Human(MyString& name, MyString& firstname, MyString& lastname
         , Date& birthday);
+    Human(MyString name, MyString firstname, MyString lastname
+        , Date birthday);
 
     MyString& GetSetName();
     MyString& GetSetFirstName();
