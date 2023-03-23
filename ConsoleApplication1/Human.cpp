@@ -21,6 +21,11 @@ Human::Human(MyString name, MyString firstname, MyString lastname, Date birthday
 	this->birthday = birthday;
 }
 
+Human::Human(const Human& hum)
+{
+	name = hum.name;
+}
+
 Human::Human()
 {
 	num = numerator++;

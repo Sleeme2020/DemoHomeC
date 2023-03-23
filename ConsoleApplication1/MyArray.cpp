@@ -37,6 +37,14 @@ MyArray& MyArray::Move(MyArray& A)
 	return *this;
 }
 
+MyArray::MyArray(const MyArray& A)
+{
+	Arr = new T[A.Len];
+	Len = A.Len;
+	for (int i = 0; i < Len; i++)
+		Arr[i] = A.Arr[i];
+}
+
 
 
 MyArray::MyArray(int a)

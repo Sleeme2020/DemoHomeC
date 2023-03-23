@@ -20,6 +20,7 @@ public:
 	T operator[](int i) const;
 	int GetLen() const;
 	MyArray& Move(MyArray& A);
+	MyArray(const MyArray& A);
 };
 
 
@@ -32,11 +33,14 @@ class MyArrayKv
 public:
 	MyArrayKv(int a);
 	MyArrayKv();
+	MyArrayKv(const MyArrayKv& kv);
 	~MyArrayKv();
 	void resize(int x);
 	void clear();
 	T2& operator[](int i);
 	T2 operator[](int i) const;
 	int GetLen() const;
+	MyArrayKv& operator=(const MyArrayKv& kv);
+
 	MyArrayKv& Move(MyArrayKv& A);
 };

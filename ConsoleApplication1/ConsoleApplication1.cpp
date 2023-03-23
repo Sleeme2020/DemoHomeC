@@ -7,18 +7,18 @@
 
 #include "Human.h" 
 #include "Kvartira.h"
-
+#include "Home.h"
 
 
 int main()
 {    
-   
+    Date a;
+    
     Human Petya("Ivanov", "Petya", "Petrovich",Date());
     Human Vas("Ivanov", "Vas", "Petrovich", Date());
     Kvartira kv1(2, 45, Petya);
-    kv1 + Vas;
-
-    
+    kv1=kv1 + Vas;
+    Home Hom("Ulitca", 5, kv1);
     std::cout << "Hello World!\n";
 }
 

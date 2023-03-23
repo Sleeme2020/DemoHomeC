@@ -19,6 +19,7 @@ public:
         , Date& birthday);
     Human(MyString name, MyString firstname, MyString lastname
         , Date birthday);
+    Human(const Human& hum);
 
     MyString& GetSetName();
     MyString& GetSetFirstName();

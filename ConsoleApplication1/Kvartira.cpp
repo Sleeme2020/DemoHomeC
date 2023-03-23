@@ -94,6 +94,13 @@ Kvartira& Kvartira::operator-(const Human& human)
 	return *this;
 }
 
+Kvartira::Kvartira(Kvartira&& kvartira)
+{
+	humans.Move(kvartira.humans);
+	komnat = kvartira.komnat;
+	squaremetr = kvartira.squaremetr;
+}
+
 Kvartira& Kvartira::operator=(const Kvartira& kvartira)
 {
 	clear();

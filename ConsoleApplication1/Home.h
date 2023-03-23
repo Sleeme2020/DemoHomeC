@@ -14,6 +14,7 @@ public:
 	Home();
 	Home(MyString& adr,int lev);
 	Home(MyString& adr, int lev, const Kvartira& kv);
+	Home(MyString adr, int lev, const Kvartira& kv);
 	Home(MyString& adr, int lev, const MyArrayKv& kv);
 
 	//Добавляю ползователей
