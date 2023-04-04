@@ -4,24 +4,12 @@
 
 
 
-void Kvartira::clear()
+void Kvartira::Clear()
 {
-	humans.clear();
+	humans.Clear();
 }
 
-void Kvartira::resize(int x)
-{/*
-	Human* tmp = humans;
-	humans = new Human[count + x];
-	for (size_t i = 0; i < count; i++)
-	{
-		humans[i] = tmp[i];
-	}
-	count += x;
-	if(tmp!=nullptr)
-		delete[] tmp;*/
-	humans.resize(x);
-}
+
 
 Kvartira::Kvartira():Kvartira(1,30)
 {
@@ -40,22 +28,17 @@ Kvartira::Kvartira(int komnat, double squaremetr)
 Kvartira::Kvartira(int komnat, double squaremetr, Human& humans)
 	:Kvartira(komnat, squaremetr)
 {
-	this->humans.resize(1);
-	this->humans[0] = humans;
-	/*this->humans = new Human[1];
-	this->humans[0] = humans;*/
+	this->humans.Add(humans);
+	
 
 }
 
 Kvartira::Kvartira(int komnat, double squaremetr
-	, Human* humans,int count) :Kvartira(komnat, squaremetr)
+	, Human* humans):Kvartira(komnat, squaremetr)
 {
-	/*this->count = count;
-	this->humans = new Human[count];*/
-	this->humans.resize(count);
-	for (int i = 0; i < count; i++)
+	for (int i = 0; i < sizeof(humans)/sizeof(Human); i++)
 	{
-		this->humans[i] = humans[i];
+		this->humans.Add(humans[i]);
 	}
 }
 
@@ -63,18 +46,16 @@ Kvartira::Kvartira(int komnat, double squaremetr
 
 Kvartira& Kvartira::operator+(const Human& human)
 {
-	resize(1);
-	humans[humans.GetLen() - 1] = human;
+	
+	Human h = human;//костыль для конст
+
+	this->humans.Add(h);
 	return *this;
 }
 
 Kvartira& Kvartira::operator+(const Kvartira& kvartira)
 {
-	resize(kvartira.humans.GetLen());
-	for (int i= humans.GetLen() -kvartira.humans.GetLen(),j=0;i< humans.GetLen();i++,j++)
-	{
-		humans[i] = kvartira.humans[j];
-	}
+	humans = humans + kvartira.humans;
 	komnat += kvartira.komnat;
 	squaremetr += kvartira.squaremetr;
 	return *this;
@@ -82,15 +63,8 @@ Kvartira& Kvartira::operator+(const Kvartira& kvartira)
 
 Kvartira& Kvartira::operator-(const Human& human)
 {
-	for (int i = 0; i < humans.GetLen(); i++)
-	{
-		if (humans[i] == human)
-		{
-			humans[i] = humans[humans.GetLen() - 1];
-			break;
-		}
-	}
-	resize(-1);
+	Human h = human;//костыль для конст
+	humans.Remove(humans.IndexOf(h));
 	return *this;
 }
 
@@ -103,12 +77,8 @@ Kvartira::Kvartira(Kvartira&& kvartira)
 
 Kvartira& Kvartira::operator=(const Kvartira& kvartira)
 {
-	clear();
-	resize(kvartira.humans.GetLen());
-	for (int i = 0; i < humans.GetLen(); i++)
-	{
-		humans[i] = kvartira.humans[i];
-	}
+	
+	humans = kvartira.humans;
 	squaremetr = kvartira.squaremetr;
 	komnat = kvartira.komnat;
 	return *this;
@@ -128,9 +98,9 @@ Kvartira& Kvartira::operator=(Kvartira&& kvartira)
 
 Kvartira& Kvartira::operator=(const Human& human)
 {
-	clear();
-	resize(1);
-	humans[0] = human;
+	humans.Clear();
+	Human h = human;//костыль для конст
+	humans.Add(h);
 	return *this;
 }
 

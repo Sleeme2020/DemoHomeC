@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{dda8af7c-8555-4308-9ecb-b3908cdbee66}</ProjectGuid>
-    <RootNamespace>ConsoleApplication1</RootNamespace>
+    <ProjectGuid>{62c3e64a-c8bc-4163-bb60-1556c69dcb20}</ProjectGuid>
+    <RootNamespace>TemplateClasesStruct</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,22 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleApplication1.cpp" />
-    <ClCompile Include="Date.cpp" />
-    <ClCompile Include="Home.cpp" />
-    <ClCompile Include="Human.cpp" />
-    <ClCompile Include="Kvartira.cpp" />
-    <ClCompile Include="MyString.cpp" />
-    <ClCompile Include="Numerator.cpp" />
+    <ClCompile Include="TemplateClasesStruct.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Date.h" />
-    <ClInclude Include="Home.h" />
-    <ClInclude Include="Human.h" />
-    <ClInclude Include="Kvartira.h" />
-    <ClInclude Include="MyListTemp.h" />
-    <ClInclude Include="MyString.h" />
-    <ClInclude Include="Numerator.h" />
+    <ClInclude Include="Array.h" />
+    <ClInclude Include="Header.h" />
+    <ClInclude Include="List.h" />
+    <ClInclude Include="ListD.h" />
+    <ClInclude Include="Quene.h" />
+    <ClInclude Include="QuenePriority.h" />
+    <ClInclude Include="Stack.h" />
+    <ClInclude Include="Tree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
